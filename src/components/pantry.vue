@@ -3,32 +3,39 @@
         <div class="row text-right">
             <router-link to="/pending" class="btn btn-primary">Go to pending!</router-link>
         </div>
-        <div class="row">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Quantity</th>
-                        <th>Re-Order Point</th>
-                    </tr>
-                </thead>
+        <div class="row jumbotron">
+            <div v-if="pantryGroceries.length > 0">
+                <h3>Items on pantry</h3>
+                <hr/>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Re-Order Point</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    <tr v-for="grocery in pantryGroceries" :class="{ danger : (grocery.quantity < grocery.reOrderPoint) }">
-                        <td>
-                            {{grocery.name}}
-                        </td>
-                        <td>
-                            <button @click="decreaseQuantity(grocery)">-</button>
-                            <span> {{grocery.quantity}} </span>
-                            <button @click="increaseQuantity(grocery)">+</button>
-                        </td>
-                        <td>
-                            {{grocery.reOrderPoint}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                    <tbody>
+                        <tr v-for="grocery in pantryGroceries" :class="{ danger : (grocery.quantity < grocery.reOrderPoint) }">
+                            <td>
+                                {{grocery.name}}
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" @click="decreaseQuantity(grocery)">-</button>
+                                <span> {{grocery.quantity}} </span>
+                                <button class="btn btn-success" @click="increaseQuantity(grocery)">+</button>
+                            </td>
+                            <td>
+                                {{grocery.reOrderPoint}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div v-if="pantryGroceries.length <= 0">
+                <p>No items on pantry.</p>
+            </div>
         </div>
     </div>
 </template>

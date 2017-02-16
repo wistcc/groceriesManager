@@ -1,6 +1,6 @@
 <template>
   <div class="container theme-showcase">
-    <div class="row jumbotron">
+    <div class="row jumbotron customHeader">
       <h1>Groceries Manager</h1>
     </div>
     <router-view></router-view>
@@ -13,3 +13,9 @@
   }
 
 </script>
+
+<style>
+  .customHeader {
+    background-color: transparent !important;
+  }
+</style>
