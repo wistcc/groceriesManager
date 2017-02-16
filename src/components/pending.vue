@@ -71,7 +71,7 @@
                 </tbody>
             </table>
 
-            <button class="btn btn-success" @click.prevent="saveCart">Save cart!</button>
+            <button class="btn btn-success" @click.prevent="saveCart">Add to pantry!</button>
         </div>
     </div>
 </template>
