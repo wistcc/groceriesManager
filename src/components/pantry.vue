@@ -34,7 +34,7 @@
                 </table>
             </div>
             <div v-if="pantryGroceries.length <= 0">
-                <p>No items on pantry.</p>
+                <p>No items on pantry. <router-link to="/pending">Let's add some items.</router-link></p>
             </div>
         </div>
     </div>
