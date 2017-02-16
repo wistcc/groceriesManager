@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="row text-right">
-            <router-link to="/pending" class="btn btn-primary">Go to pending!</router-link>
+            <router-link to="/pending" class="btn btn-primary">Go to pending</router-link>
         </div>
         <div class="row jumbotron">
             <div v-if="pantryGroceries.length > 0">

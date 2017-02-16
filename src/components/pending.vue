@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="row text-right">
-            <router-link to="/" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Go to Pantry!</router-link>
+            <router-link to="/" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Go to Pantry</router-link>
         </div>
 
         <div class="row jumbotron">
@@ -71,7 +71,11 @@
                 </tbody>
             </table>
 
-            <button class="btn btn-success" @click.prevent="saveCart">Add to pantry!</button>
+            <button class="btn btn-success" @click.prevent="saveCart">Add to pantry</button>
+        </div>
+
+        <div class="row jumbotron" v-if="cartGroceries.length <= 0 && pendingGroceries.length > 0">
+            <p>No items on cart. Add some from the pending list just typing how many of that item you will add to the cart.</p>
         </div>
     </div>
 </template>
